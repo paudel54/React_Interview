@@ -1,11 +1,20 @@
 import './App.css';
-import PerInfo from './components/PerInfo';
+// hook useState()
+
+import React, { useState } from 'react'
+
 function App() {
+  // destructuring the fn setter function setCount form useState hook , adding 0 as defalut value.  
+  const [i, setCount] = useState(0);
+  // let i = 0;
+  const addValue = () => {
+    setCount(i + 1);
+    console.log(i);
+  }
   return (
     <div className="App">
-      <PerInfo name="Hari" age="21" />
-      <PerInfo name="Pemba" age="25" />
-      <PerInfo name="Suraj" age="27" />
+      <h1>{i}</h1>
+      <button onClick={addValue}>Click</button>
     </div>
   );
 }
