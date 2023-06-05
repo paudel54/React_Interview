@@ -1,23 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-
+import PerInfo from './components/PerInfo';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PerInfo name="Hari" age="21" />
+      <PerInfo name="Pemba" age="25" />
+      <PerInfo name="Suraj" age="27" />
     </div>
   );
 }
