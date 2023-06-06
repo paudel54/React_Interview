@@ -36,6 +36,15 @@ function App() {
     color: "blueviolet",
     fontSize: "25",
   }
+  let message = <h1>Hello JSX</h1>
+  let a = 5;
+  let b = 2;
+  // behind the scene Jsx is created with React.createElement
+  let jsx = React.createElement(
+    'Namaste',
+    { style: { color: 'red' } },
+    'GUYS I did it'
+  )
 
   return (
     <div className="App">
@@ -45,6 +54,9 @@ function App() {
       {/* Arrow function or return must be gurantted when we pass parameter to fn on Click Events */}
       <button className='cB' onClick={() => changeCounter('+')}>Increment</button>
       <button style={btnStyle} onClick={() => changeCounter('-')}>Decrement</button>
+      {message}
+      {`The total Sum is ${a + b}`}
+      {jsx}
     </div>
   );
 }
