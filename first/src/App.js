@@ -1,6 +1,6 @@
 import './App.css';
 // hook useState()
-
+// The import of React is not Required for executing JSX this is the beauty of jsx transform earlier was different
 import React, { useState } from 'react'
 
 function App() {
@@ -10,22 +10,34 @@ function App() {
 
 
   // lazy initialization if we want to load non primitive data on state
-  function initialState() {
-    // lazy initialization is required if you have a bigger porcess which is going to give you the initial state value and that you put in a function. then instead of writing
-    //the function only do make sure you follow lazy inititializaion
-    console.log('Its an expensive process', Date.now())
-    return 0;
-  }
+  // function initialState() {
+  //   // lazy initialization is required if you have a bigger porcess which is going to give you the initial state value and that you put in a function. then instead of writing
+  //   //the function only do make sure you follow lazy inititializaion
+  //   console.log('Its an expensive process', Date.now())
+  //   return 0;
+  // }
 
-  const [i, setCount] = useState(() => initialState());
+  // const [i, setCount] = useState(() => initialState(0));
+  // const [flag, setFlag] = useState(true);
+  // Use State with Object Literals. 
+  const [sObj, setCount] = useState({
+    cnt: 0,
+    mFlag: true
+  });
+
+
   // const decreaseValue = () => {
   //   setCount(i - 1);
   // }
   const changeCounter = (op) => {
+    let tC = sObj.cnt;
     if (op === '+') {
-      setCount(i + 1);
+      // Use of Sprea operator is creating a new space and override if any changes to value
+      tC++;
+      setCount({ ...sObj, cnt: tC });
     } else {
-      setCount(i - 1);
+      tC--;
+      setCount({ ...sObj, cnt: tC });
     }
   }
 
@@ -48,7 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{i}</h1>
+      <h1>Counter{sObj.cnt}</h1>
       {/* ON Click is an event */}
       {/* <button onClick={() => setCount(i + 1)}>Click</button> */}
       {/* Arrow function or return must be gurantted when we pass parameter to fn on Click Events */}
@@ -57,6 +69,11 @@ function App() {
       {message}
       {`The total Sum is ${a + b}`}
       {jsx}
+      <div>
+        {sObj.mFlag.toString()}
+        {/* Creatting toggle  */}
+        <button onClick={() => setCount({ ...sObj, mFlag: !sObj.mFlag })}>Toggle</button>
+      </div>
     </div>
   );
 }
