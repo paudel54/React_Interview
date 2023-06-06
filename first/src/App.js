@@ -27,7 +27,14 @@ function App() {
     } else {
       setCount(i - 1);
     }
+  }
 
+  // css for inline styling with object Literals
+  const btnStyle = {
+    width: "150px",
+    height: "100px",
+    color: "blueviolet",
+    fontSize: "25",
   }
 
   return (
@@ -36,8 +43,8 @@ function App() {
       {/* ON Click is an event */}
       {/* <button onClick={() => setCount(i + 1)}>Click</button> */}
       {/* Arrow function or return must be gurantted when we pass parameter to fn on Click Events */}
-      <button onClick={() => changeCounter('+')}>Decrement</button>
-      <button onClick={() => changeCounter('-')}>Increment</button>
+      <button className='cB' onClick={() => changeCounter('+')}>Increment</button>
+      <button style={btnStyle} onClick={() => changeCounter('-')}>Decrement</button>
     </div>
   );
 }

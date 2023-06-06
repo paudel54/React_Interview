@@ -5,3 +5,11 @@
   margin: 10px;
   display: inline-block;
 }
+
+/* External styling */
+.cB {
+  width: 150px;
+  height: 100px;
+  color: blueviolet;
+  font-size: 25;
+}
