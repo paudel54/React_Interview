@@ -11,16 +11,20 @@ function App() {
     { id: 4, pName: 'Kiwi', price: '$7' },
   ]
   const [products, setProducts] = useState(temp);
+  // Creating Mapping function seperate to make the code much more clearner. 
+  let productList = (
+    products.map((item) => {
+      return (
+        <ListItem key={item.id.toString()} pName={item.pName} />
+      )
+    })
+  )
   return (
     <div className="App">
       <div>THis is List and PROPS</div>
       {/* {JSON.stringify(products)} */}
       <div>
-        {products.map((item) => {
-          return (
-            <ListItem key={item.id.toString()} pName={item.pName} />
-          )
-        })}
+        {productList}
       </div>
     </div>
   );
