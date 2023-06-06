@@ -49,3 +49,6 @@ export default class functional extends Component {
 
 //component will unmount in UseEffect is done by provideing
 // the return keyword on useEffect that load on removieng components;
+
+
+// useRef is used to get reference of element like: enabling focus on particular input!

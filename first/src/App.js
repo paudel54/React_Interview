@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from "react";
-import String from "./components/String";
-
-export default function App() {
-  const [data, setData] = useState(true);
+import React, { useEffect, useRef } from 'react'
+import "./App.css"
+const App = () => {
+  const iElement = useRef(null);
+  useEffect(() => {
+    iElement.current.focus();
+  }, []);
   return (
-    <div>
-      {data ? <String /> : <h1>No Data Available</h1>}
-      <button onClick={() => setData(!data)}>Toggle</button>
+    <div className='margin'>
+      <input type='text' />
+      <hr />
+      <input type='text' ref={iElement} />
+      <div>
+        <button onClick={() => iElement.current.focus()}>Set Focus</button>
+      </div>
     </div>
-  );
+  )
 }
 
-
+export default App
