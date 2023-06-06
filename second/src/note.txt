@@ -1,0 +1,11 @@
+Creating LIST 
+1//React always asks for id on creating a list
+this is because react needs to identify each rendered item, 
+when item need to be added, changed or removed. 
+
+Setting index as a unique Identity is not at all a preferred way, because the moment the item
+is added or value is changed, the index may refer to a different entity.
+2//React prefers id or key ot be of String. 
+ 
+3// Should you use the index of map() method as key attribute?
+No=> key: must have stable identity. Its better to assign stable id, eg that can be from database,  

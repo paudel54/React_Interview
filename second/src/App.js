@@ -7,13 +7,13 @@ function App() {
   return (
     <div className="App">
       <div>THis is List and PROPS</div>
-      {product.map((item) => {
-        return (
-          <ul>
-            <li>{item}</li>
-          </ul>
-        )
-      })}
+      <div>
+        {product.map((item, i) => {
+          return (
+            <li key={i.toString()}>{item}</li>
+          )
+        })}
+      </div>
     </div>
   );
 }
