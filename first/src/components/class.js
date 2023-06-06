@@ -44,4 +44,8 @@ export default class functional extends Component {
 // component life cycle methods
 
 // phases mounting, updating, unmounting, error handling,
-//purpose execute peice of code depending on the peice of sequence, or requirements. 
+//purpose execute peice of code depending on the peice of sequence, or requirements.
+
+
+//component will unmount in UseEffect is done by provideing
+// the return keyword on useEffect that load on removieng components;

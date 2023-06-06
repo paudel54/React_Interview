@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from "react";
+import String from "./components/String";
 
-
-let count = 0;
 export default function App() {
-  const [cnt, setCount] = useState(0);
-  const [flag, setFlag] = useState(true);
-  // Use effect is called everytime there is a re-render
-  useEffect(() => {
-    console.log('Effects called ... ' + count++);
-  }, [cnt])
-
+  const [data, setData] = useState(true);
   return (
     <div>
-      <h1>{cnt + '-' + flag.toString()}</h1>
-      <button onClick={() => setCount(cnt + 1)}>Increment</button>
-      <button onClick={() => setFlag(!flag)}>Toggle</button>
+      {data ? <String /> : <h1>No Data Available</h1>}
+      <button onClick={() => setData(!data)}>Toggle</button>
     </div>
   );
 }
+
 
