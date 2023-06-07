@@ -9,6 +9,7 @@ const DemoComponent = (props) => {
             <h2>Value :- {props.value}</h2>
             <h2>Date :- {props.date.toString()}</h2>
             <h3>String literals :- {props.lekh}</h3>
+            <h1>{props.test.toString()}</h1>
         </div>
     )
 }
