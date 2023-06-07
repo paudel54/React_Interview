@@ -6,8 +6,14 @@ const App = () => {
     pName: 'Samsung'
   }
 
-  const getData = () => {
+  // Here is E is syntheic event. 
+  const getData = (e) => {
     console.log('Checking the onClick Event on Button.')
+    console.log(e.target.innerHTML);
+  }
+
+  const getDivInfo = (e) => {
+    console.log('Content of div', e.target.innerHTML)
   }
 
   return (
@@ -19,9 +25,12 @@ const App = () => {
       {/* On Click must be or event be CamelCase.  */}
       {/* if we use parantheis that function will be called immediately on load */}
       {/* on passing parameter or args we need to have a fuction with return so it prevents on load behaviour.  */}
-      <button onClick={() => getData()}>
+      <button onClick={getData}>
         Get Data
       </button>
+      <div onClick={getDivInfo}>
+        synthetic events to get content of div.
+      </div>
     </div>
   )
 }

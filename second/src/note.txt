@@ -22,3 +22,9 @@ allows up to wrap children without adding extra notes to the DOM.
 
 7.//Event Handling with inputs, checkbox,text inputs, forms!!
  {/* on passing parameter on events like onCLick={()=>functionWithParameters()} or args we need to have a fuction with return so it prevents on load behaviour.  */}
+ //Synthetic Events (e)
+ e.target means we are going to get the reference of the element which raised the event. 
+ What is Synthetic Events.||> A syntheticEvent is a wrapper around the native browser event object and that is passed to every function automatically
+ //ITS automatically Received. Reference of event received as each
+ 8. Write a code to get content of divison. 
+ Create a div with onClick handler and console.log('Content of div', e.target.innerHTML)
