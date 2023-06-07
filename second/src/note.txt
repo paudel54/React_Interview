@@ -16,3 +16,9 @@ No=> key: must have stable identity. Its better to assign stable id, eg that can
 
 5//Use of Spread Operator:
 passing attribute with the Spread Operator is a fantastic short way when you are willing to pass object to props. 
+
+6.//React Fragmants:
+allows up to wrap children without adding extra notes to the DOM.
+
+7.//Event Handling with inputs, checkbox,text inputs, forms!!
+ {/* on passing parameter on events like onCLick={()=>functionWithParameters()} or args we need to have a fuction with return so it prevents on load behaviour.  */}
