@@ -8,7 +8,10 @@ const App = () => {
   }
 
   // State to control text input
-  const [data, setData] = useState('Default');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [data, setData] = useState("Data");
   // Here is E is syntheic event. 
   const getData = (e) => {
     console.log('Checking the onClick Event on Button.')
@@ -24,9 +27,19 @@ const App = () => {
     // console.log('Info from text Input', e.target.value)
   }
 
-  const getFormData = (e) => {
+  const showData = (e) => {
     e.preventDefault();
-    console.log("Submission Process");
+    setData(`${firstName}, ${lastName} and ${mobile}`)
+  }
+
+  const firstNameChangeHandler = (e) => {
+    setFirstName(e.target.value);
+  }
+  const lastNameChangeHandler = (e) => {
+    setLastName(e.target.value);
+  }
+  const mobileChangeHandler = (e) => {
+    setMobile(e.target.value);
   }
 
 
@@ -45,22 +58,25 @@ const App = () => {
       <div onClick={getDivInfo}>
         synthetic events to get content of div.
       </div>
-      <div>
-        <h1>{data}</h1>
-      </div>
+
       <div>
         <input onChange={getInputData} type='text' />
       </div>
       <p>Working with forms for preVenting Default Browser Behaviours</p>
 
       <div>
-        <form onSubmit={getFormData}>
-          <input type="text" />
+        <form onSubmit={showData}>
+          <input onChange={firstNameChangeHandler} type="text" placeholder='Fist Name' />
           <br />
-          <input type="text" />
+          <input onChange={lastNameChangeHandler} type="text" placeholder='Last Name' />
+          <br />
+          <input onChange={mobileChangeHandler} type="text" placeholder='Mobile' />
           <br />
           <input type="submit" value="Submit" />
         </form>
+        <div>
+          <h1>{data}</h1>
+        </div>
       </div>
     </div>
   )
