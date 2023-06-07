@@ -1,11 +1,14 @@
 import React from 'react'
 import DemoComponent from './component/DemoComponent'
+import { useState } from 'react'
 const App = () => {
   const product = {
     pCode: 1008,
     pName: 'Samsung'
   }
 
+  // State to control text input
+  const [data, setData] = useState('Default');
   // Here is E is syntheic event. 
   const getData = (e) => {
     console.log('Checking the onClick Event on Button.')
@@ -15,6 +18,13 @@ const App = () => {
   const getDivInfo = (e) => {
     console.log('Content of div', e.target.innerHTML)
   }
+
+  const getInputData = (e) => {
+    setData(e.target.value)
+    // console.log('Info from text Input', e.target.value)
+  }
+
+
 
   return (
     <div>
@@ -30,6 +40,12 @@ const App = () => {
       </button>
       <div onClick={getDivInfo}>
         synthetic events to get content of div.
+      </div>
+      <div>
+        <h1>{data}</h1>
+      </div>
+      <div>
+        <input onChange={getInputData} type='text' />
       </div>
     </div>
   )

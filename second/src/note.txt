@@ -28,3 +28,8 @@ allows up to wrap children without adding extra notes to the DOM.
  //ITS automatically Received. Reference of event received as each
  8. Write a code to get content of divison. 
  Create a div with onClick handler and console.log('Content of div', e.target.innerHTML)
+
+9. Input Events!
+    event handler: onChange={getChange} e.target.value
+    How do you update text input on react?
+    => SyntheticEvent (e.target.value) has reference to that element from which we can update the state and Render to InterFace. 
