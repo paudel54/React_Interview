@@ -12,3 +12,7 @@ No=> key: must have stable identity. Its better to assign stable id, eg that can
 
 4// what would be teh defalut value of attrribute
 =>TRUE <DemoComponent value/>
+
+
+5//Use of Spread Operator:
+passing attribute with the Spread Operator is a fantastic short way when you are willing to pass object to props. 
