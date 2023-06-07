@@ -38,5 +38,20 @@ allows up to wrap children without adding extra notes to the DOM.
     How will you prevent the default behaviour of an element?
     can you use return false ? no not in react
     we use e.preventDefault() explicetly. 
-    
+
 10.! When you try to update Object Literal, you have to make sure that the previous/existing value is there & then you update the new value
+How will you update the individual value of state inside an object?
+// updating individual value of state inside an object by the use of Spread operator
+
+11. Can you directly render object?
+object are not valid react child we need to convert into String with JSON.Stringify
+
+12.Improvising handlers, single handlers for all inputs or state
+introduction to square [] to haold variable
+let test = "ename";
+const obj = {
+    [test]: 'Name'
+}
+ 
+ Here Key of an object hold on Variable Name
+ //implementaion of dynamic keys and single change handlers. 
