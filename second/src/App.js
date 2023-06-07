@@ -24,6 +24,10 @@ const App = () => {
     // console.log('Info from text Input', e.target.value)
   }
 
+  const getFormData = (e) => {
+    e.preventDefault();
+    console.log("Submission Process");
+  }
 
 
   return (
@@ -46,6 +50,17 @@ const App = () => {
       </div>
       <div>
         <input onChange={getInputData} type='text' />
+      </div>
+      <p>Working with forms for preVenting Default Browser Behaviours</p>
+
+      <div>
+        <form onSubmit={getFormData}>
+          <input type="text" />
+          <br />
+          <input type="text" />
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
       </div>
     </div>
   )

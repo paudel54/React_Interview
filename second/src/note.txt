@@ -33,3 +33,8 @@ allows up to wrap children without adding extra notes to the DOM.
     event handler: onChange={getChange} e.target.value
     How do you update text input on react?
     => SyntheticEvent (e.target.value) has reference to that element from which we can update the state and Render to InterFace. 
+
+9.Preventing Default behaviour on form Submit. 
+    How will you prevent the default behaviour of an element?
+    can you use return false ? no not in react
+    we use e.preventDefault() explicetly. 
