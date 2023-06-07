@@ -38,3 +38,5 @@ allows up to wrap children without adding extra notes to the DOM.
     How will you prevent the default behaviour of an element?
     can you use return false ? no not in react
     we use e.preventDefault() explicetly. 
+    
+10.! When you try to update Object Literal, you have to make sure that the previous/existing value is there & then you update the new value
