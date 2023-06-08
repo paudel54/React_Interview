@@ -103,3 +103,7 @@ const prodItems = (items.map((item)=>{
       SPAs loads the page once and then only it transmits the data between client and server
       This transmission of data basically doesnot refresh the entire page-the main container remains as it is & the data/inner pages appears as 
       if they chage but they are genereated at client side only. !
+
+    19. How do you acheive Single Page Application
+      use of link instead of anchor. 
+      firstly: install react-router-dom, 2ndly wrap the entire app on index.js with BrowserROuter and 3rd use Route package and Link to attain state. 
