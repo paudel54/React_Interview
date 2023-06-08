@@ -77,3 +77,11 @@ Checkbox/radioButon =>Checked Property
 15.// What is  Conditional Rendering. => Showing Specific components depending on Specific Condition. 
 Depending upon user Interface Changes: realworld exmp: dashboard switch ADMIN vs USER. 
 using if..else swithc..case.. ternary Operator ( condition ? true: false) logical &&
+
+16. Explain the JSX element variable syntax and concept. 
+
+const prodItems = (items.map((item)=>{
+  return (
+    <li>{item.pName}</li>
+  )
+}))

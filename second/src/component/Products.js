@@ -7,20 +7,16 @@ const Products = (props) => {
         { pCode: 3, pName: "Grapes" },
         { pCode: 4, pName: "Oranges" },
     ])
+    // Storing the result form map into a variable or Storing JSX into variables. 
+    const prodItems = (
+        items.map((item) => {
+            return (<li>{item.pName}</li>)
+        })
+    )
 
-    if (props.isAdmin) {
-        return (
-            <div>
-                {items.map((item) => {
-                    return (<li>{item.pName}</li>)
-                })}
-            </div>
-        )
-    } else {
-        return (
-            <h1>No Data Found !!!!!</h1>
-        )
-    }
+    return (
+        props.isAdmin ? prodItems : <h1> No Data Found</h1>
+    );
 
 
 
