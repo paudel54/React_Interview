@@ -85,3 +85,6 @@ const prodItems = (items.map((item)=>{
     <li>{item.pName}</li>
   )
 }))
+
+17.  Logical && 
+{condition if true && renders HTML elements}
