@@ -1,9 +1,10 @@
 import About from './components/About';
 import Home from './components/Home';
 import Products from './components/Products';
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route, Link, useRouteMatch } from "react-router-dom"
 
 function App() {
+  const { path, url } = useRouteMatch();
   return (
     <div className="App">
 
@@ -14,14 +15,15 @@ function App() {
       </ul>
 
       <Routes>
-        <Route path='/' element={Home} />
+        <Route path='/home' element={Home} />
         <Route path='/about' element={About} />
         <Route path='/products' element={Products} />
       </Routes>
 
 
-    </div>
+    </div >
   );
 }
 
 export default App;
+

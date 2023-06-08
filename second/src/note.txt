@@ -107,3 +107,49 @@ const prodItems = (items.map((item)=>{
     19. How do you acheive Single Page Application
       use of link instead of anchor. 
       firstly: install react-router-dom, 2ndly wrap the entire app on index.js with BrowserROuter and 3rd use Route package and Link to attain state. 
+
+    20. Looking at code refactor dashboard/Home page comes on openeing the  webpage
+      // wrap route1,route2, ..routen  with switch and put path = / at the end. 
+
+      //Explain the "exact" attribute's purpose used with <Route> Component . 
+      !! <Route path = "/"> Matches the beginning of the String not whole String. all other paths like /address / porducts etc had matching inital /
+      So, / was rendering to every component to avoid this situation and to have exact path matching we swithc on the arrtibute "exact ".
+
+      //how is it different to use <Route> with and without <Switch>?
+       <route> placed in <Switch> will have different execution, if route is executed, then rest of the routes are not rendered and are skipped. 
+       This will always match the URL for all the items selected. 
+  
+  21. what is multi-Page-Application ?  on every url change page reloading because once product/1 is fetched for product/2 everythingtom client and server has to be done from scratch
+      //this will reload the page which is not efficent so Single-Page_Application got introduced. 
+      //single page appliaction SPA will only renders onto client side. the renderig or refetching the html is not required. 
+
+  22.. Route Paramaters. 
+
+      //How can you link dynamic Routes? || How do you link Parameters witha Route?
+       To add dynamic Parameters with the Route URL, you just have to use => 
+       <Route path = "domain.com/route/:paramname" </Route>    it can be extreacted by useParams() hook . the last /item
+       //  /route/:<param> is given at runtime which can be anything. 
+  23. useRouteMatch() hook return path, url isExact and params as object
+
+    path: vs URL 
+    path
+    /tutorials/:title then the path will show => /tutorials/:title   || path is used for building out nested Routes 
+    URl
+    /tutorials/regex then the path will show the value of title      || URL is used for building out <Links>
+
+24. WHat is nested Routes?
+    Routes are defined at component level and there can be dynamic urls configured with nested Routes. 
+    
+    //useRouteMatch() hook - We have used to get the match object or match data
+    Though it attempts to match the current URL in the same way as that a <Route> would as per the official site of react Router. 
+    we can use it 2 ways:
+    1. const match = useRouteMatch(); || in this case it returns the match object and no parameter is given 
+    2. Object as parameter is passed. 
+        const match = useRouteMatch({
+          path:'/tutorials/:title',
+          strict:true
+        })
+
+    //what is "match" object in react router useRaouterMatch()? 
+     The "match" object contains information about how a <Route Path> is matched
+     The match object has various object properties like params, isExact, path and url
