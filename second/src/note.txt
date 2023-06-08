@@ -88,3 +88,18 @@ const prodItems = (items.map((item)=>{
 
 17.  Logical && 
 {condition if true && renders HTML elements}
+
+18. Multi-Page Application
+    page reloading is not good idea for user: 
+    page reloading and refreshing not good approach
+    //difference between MPA(Multipage Application vs Single Page Application)
+
+    MPAs reloads the HTML pages 
+    HTML pages with css and other things are rendered on the server & then they are delivered
+    They are reloaded/rerendered at the client Side
+    The refresh of the page is visible to the end user. 
+
+    //Single-Page Application.🔥
+      SPAs loads the page once and then only it transmits the data between client and server
+      This transmission of data basically doesnot refresh the entire page-the main container remains as it is & the data/inner pages appears as 
+      if they chage but they are genereated at client side only. !
