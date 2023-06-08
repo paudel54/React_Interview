@@ -18,7 +18,11 @@ const App = () => {
 
   }
   const handleChange = (e) => {
-    setPersonInfo({ ...personInfo, [e.target.name]: e.target.value })
+    //  better apporcah with use of previous state
+    // setPersonInfo({ ...personInfo, [e.target.name]: e.target.value })
+    setPersonInfo((prevState) => {
+      return { ...prevState, [e.target.name]: e.target.value }
+    });
   }
 
   return (
