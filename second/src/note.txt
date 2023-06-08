@@ -73,3 +73,7 @@ functional update makes sure we have latest copy of the state.
 Dropdown button =>value Property
 Textboxes => value Property
 Checkbox/radioButon =>Checked Property
+
+15.// What is  Conditional Rendering. => Showing Specific components depending on Specific Condition. 
+Depending upon user Interface Changes: realworld exmp: dashboard switch ADMIN vs USER. 
+using if..else swithc..case.. ternary Operator ( condition ? true: false) logical &&
