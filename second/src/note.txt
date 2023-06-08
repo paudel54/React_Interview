@@ -153,3 +153,11 @@ const prodItems = (items.map((item)=>{
     //what is "match" object in react router useRaouterMatch()? 
      The "match" object contains information about how a <Route Path> is matched
      The match object has various object properties like params, isExact, path and url
+
+    25. Redirect. 
+        <Redirect> react router dom. useful for Redirecting to valid page esp in valid auth or invalid auth or throwing error out .
+        EXAMPLE
+        <Route exact path = "/">
+        {validUser ? <Redirect to = "/dashboard"/> : <InvalidUser/>}
+        </Route>
+
