@@ -8,7 +8,8 @@ const App = () => {
   const [personInfo, setPersonInfo] = useState({
     name: '',
     address: '',
-    phone: ''
+    phone: '',
+    checkbox: 'true'
   })
 
   const handleSubmit = (e) => {
@@ -25,6 +26,12 @@ const App = () => {
     });
   }
 
+  const handleCheckbox = (e) => {
+    setPersonInfo((prevState) => {
+      return { ...prevState, [e.target.name]: e.target.checked }
+    });
+  }
+
   return (
     <div>
       <div>
@@ -32,6 +39,7 @@ const App = () => {
           <input onChange={handleChange} type="text" placeholder='Name' name="name" />
           <input onChange={handleChange} type="text" placeholder='Address' name="address" />
           <input onChange={handleChange} type="text" placeholder='Phone' name="phone" />
+          <input onChange={handleCheckbox} type="checkbox" name="checkbox" />
           <button>Submit</button>
           <h1>{data}</h1>
           <h2>{JSON.stringify(personInfo)}</h2>

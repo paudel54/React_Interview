@@ -55,3 +55,21 @@ const obj = {
  
  Here Key of an object hold on Variable Name
  //implementaion of dynamic keys and single change handlers. 
+
+ 13. Why is updating state with "functional update" syntax better?
+   const handleChange = (e) => {
+    //  better apporcah with use of previous state
+    // setPersonInfo({ ...personInfo, [e.target.name]: e.target.value })
+    setPersonInfo((prevState) => {
+      return { ...prevState, [e.target.name]: e.target.value }
+    });
+  }
+
+!!=> React doesnot update the state immediately as it has its own method or schedule to update the state
+INcase there are many updates of state happening at same time, it may refers to incorrect copy of state
+functional update makes sure we have latest copy of the state. 
+
+14.// Checkbox or Radio -Input Feild
+Dropdown button =>value Property
+Textboxes => value Property
+Checkbox/radioButon =>Checked Property
