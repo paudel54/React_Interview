@@ -1,48 +1,48 @@
 import React, { useState } from 'react'
 
 const App = () => {
-  const [data, setData] = useState("Loading Default...")
-
-  // managinf multiple state on Object:
-
+  const [data, setData] = useState('Data Loading....');
   const [personInfo, setPersonInfo] = useState({
     name: '',
-    address: '',
-    phone: '',
-    checkbox: 'true'
+    mobile: ''
   })
-
+  const [radio, setRadio] = useState({
+    male: 'false',
+    female: 'false',
+    married: 'false'
+  })
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('FOrm Response Got Submitted. ')
-    setData(`Updated Name is ${personInfo.name} your New Address is  ${personInfo.address} and Updated Phone Number is ${personInfo.phone}`);
-
+    setData(`Name: ${personInfo.name} , phoneNo: ${personInfo.mobile} Male?: ${radio.male} female?: ${radio.female} Married?: ${radio.married}`)
+    console.log('Form Submitted!!');
   }
+
   const handleChange = (e) => {
-    //  better apporcah with use of previous state
-    // setPersonInfo({ ...personInfo, [e.target.name]: e.target.value })
-    setPersonInfo((prevState) => {
-      return { ...prevState, [e.target.name]: e.target.value }
-    });
+    setPersonInfo(
+      (prevState) => {
+        return {
+          ...prevState, [e.target.name]: e.target.value
+        }
+      }
+    )
   }
-
+  // Creating Seperate State object of checkbox and radios. 
   const handleCheckbox = (e) => {
-    setPersonInfo((prevState) => {
+    setRadio((prevState) => {
       return { ...prevState, [e.target.name]: e.target.checked }
-    });
+    })
   }
 
   return (
     <div>
       <div>
         <form onSubmit={handleSubmit}>
-          <input onChange={handleChange} type="text" placeholder='Name' name="name" />
-          <input onChange={handleChange} type="text" placeholder='Address' name="address" />
-          <input onChange={handleChange} type="text" placeholder='Phone' name="phone" />
-          <input onChange={handleCheckbox} type="checkbox" name="checkbox" />
+          <div> <span>Employee Name :</span> <input onChange={handleChange} type='text' name='name' /></div>
+          <div><span>Gender :</span> <input onChange={handleCheckbox} type="radio" name="male" /> <span>Male</span> <input onChange={handleCheckbox} type="radio" name="female" /> <span>Female</span></div>
+          <div><span>Married :</span> <input onChange={handleCheckbox} type="checkbox" name="married" /> </div>
+          <div> <span>Mobile :</span> <input onChange={handleChange} type='text' name='mobile' /></div>
           <button>Submit</button>
-          <h1>{data}</h1>
-          <h2>{JSON.stringify(personInfo)}</h2>
+          {JSON.stringify(data)}
         </form>
       </div>
     </div>
