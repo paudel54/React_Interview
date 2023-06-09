@@ -311,5 +311,19 @@ on every event.
   37. In which Scenario do you have to use redux or a similar framework? 
 Whenever you hae an application which has a larger size or data set- there will be data shared amoung various components or the entir app on such scenerio we nned to use it. 
 
-28.
+28.Create global Store
+To create Global Store, Use createStore() method of redux
+const store = createStore(reducer);
+//store returns the object. i.e the Global State. 
+//!!!remember the reducer function becomes an actual reducer when you pass it as an argument inside createStore() method. 
 
+==> THis implies we need to CREATE REDUCER function first and pass it as argument to createStore. 
+
+38. How to create a global store? || Explain the usage of redux -createStore() method. 
+      we can create a global store with createStore() method that consists of reducer function but it's now depreciated. 
+      when we create a reducer function we must make sure that there is always two Parameters
+      state and action. 
+      // the reducer has 2 parameter state and action: action receives the Object Literal(value) from dispatch. 
+
+      //import createStore from "redux" not react-redux. 
+      react-redux is a connector is just to connect component and redux store. 
