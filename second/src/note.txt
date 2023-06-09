@@ -320,10 +320,16 @@ const store = createStore(reducer);
 ==> THis implies we need to CREATE REDUCER function first and pass it as argument to createStore. 
 
 38. How to create a global store? || Explain the usage of redux -createStore() method. 
-      we can create a global store with createStore() method that consists of reducer function but it's now depreciated. 
+  step:1    we can create a global store with createStore() method that consists of reducer function but it's now depreciated. 
       when we create a reducer function we must make sure that there is always two Parameters
       state and action. 
       // the reducer has 2 parameter state and action: action receives the Object Literal(value) from dispatch. 
 
       //import createStore from "redux" not react-redux. 
       react-redux is a connector is just to connect component and redux store. 
+  step:2 PROVIDE THE store to entire application with <Provider> compoent from react-redux. 
+        It make redux store avaiale to any nested components. 
+
+        <Provider store = {store}>
+            <App/> || if you want to provide access to only some of components then wrap woth componet only
+        </Provider>
