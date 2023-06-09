@@ -226,4 +226,35 @@ const prodItems = (items.map((item)=>{
 
       It returns new location everytime the URL changes, somewhat like the state which is updated on everyChange. 
 
+???????????????????????????????COMPLEX STATE MANAGEMENT WITH CONTEXT API REDUX REDUX TOOLKIT ???????????????????????????????????????????
+    
+    37. What is  Props drilling?:
+         Passing data from component to component with props. 
+    38. Is it always good to avoid prop-drilling pattern? Shoudl you put the global state all the time using context API or redux?
+          => one or two level of component we use props: if level increases on high better to use global state
+          => when it is getting complex with various level, then certainly we choose to make few data peices GLobal 
 
+  29. CONTEXT API :FOR TOTAL SUM
+
+      Context API setup
+      1.Create Context
+      //defalut value is like state management but in global scope
+      const myContext = React.createContext(defalutValue);
+      ex:2
+      const ProdContext = React.createContext({pName: 'Apple', price:45});
+      
+      here, myContext is a "Global Context Object "
+      2.Provider
+
+        //the value would be avaialbe onto entire App & sub-components
+        <MyContext.Provider value = {value}>
+          <App/>
+        </MyContext.Provider>
+
+        ex:2:
+        <MyContext.Provider value = {total}>
+          <Total/>
+        </MyContext.Provider>
+        || On this case the value of total is availabel to current compotnet and <Total/> only
+          context must be matched. 
+      3.Consumer
