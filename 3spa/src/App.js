@@ -23,10 +23,3 @@ export default App;
 
 
 
-<Prompt when={!dataEntered} message={(location, action) => {
-  if (location.pathname === "/about") {
-    return false;
-  } else {
-    return true;
-  }
-}} />
