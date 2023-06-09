@@ -236,7 +236,12 @@ const prodItems = (items.map((item)=>{
 
   29. CONTEXT API :FOR TOTAL SUM
 
-      Context API setup
+  
+  30. Explain the concept of context API and how do you use it into your Project?
+     Whenever there is a need to have some peices of data vailable to variour/multiple componenets, (maybe) entire application,
+     then we use context API. IT consists of 3 majour steps. 
+
+     Context API setup
       1.Create Context
       //defalut value is like state management but in global scope
       const myContext = React.createContext(defalutValue);
@@ -258,3 +263,22 @@ const prodItems = (items.map((item)=>{
         || On this case the value of total is availabel to current compotnet and <Total/> only
           context must be matched. 
       3.Consumer
+      <TotalContext.COnsumer> </TotalContext.Consmer/>
+
+    31. How does the Context.Consumer works?
+        It is a React component that is suscribed to Context Changes. 
+        It requires function as child. This function receives current context value
+
+    32. What will be the context value if there is no Provider used?
+        If there is no provider, Consumer will receives the default value that createContext has set upon. 
+
+    33. useContext() hook. 
+        =>Esp designed to shorten or ease Context.consumer with callback return 
+        const value = useContext(MyContext);
+        =>Here we are passing the context object as parameter & it returns the current context value of nearest <MyContext.Provider>
+        referring the component tree. 
+
+    34. Expain useContext() hook.
+        It takes the context as parameter and returns context value. 
+    35. Will the component using useContext() hook re-render everytime the context value changes?
+      => yes, if there is change in global context, it will re-render the compoent . 

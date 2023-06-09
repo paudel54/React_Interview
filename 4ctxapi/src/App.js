@@ -49,11 +49,12 @@ function App() {
           }
         </select>
       </div>
-      <Cart cart={cart} />
+
       <TotalContext.Provider value={total}>
         {/* not necessary to pass as props  */}
         {/* <Total total={total} /> */}
         <Total />
+        <Cart cart={cart} />
       </TotalContext.Provider>
 
       <Total total={total} />

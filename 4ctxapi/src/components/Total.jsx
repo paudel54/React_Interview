@@ -1,20 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+// Create Context is required what so ever.
 import TotalContext from "../store/TotalContext";
-const Total = (props) => {
+
+const Total = () => {
+  const total = useContext(TotalContext);
   return (
-    // consuming the global context.
-    <TotalContext.Consumer>
-      {/* here context is readily availabel on this case we have passed total */}
-      {(total) => {
-        return (
-          <div className="customDiv">
-            <h3>Total Component</h3>
-            <hr />
-            <h2>Total : {total}</h2>
-          </div>
-        );
-      }}
-    </TotalContext.Consumer>
+    <div className="customDiv">
+      <h3>Total Component</h3>
+      <hr />
+      <h2>Total : {total}</h2>
+    </div>
   );
 };
 
