@@ -193,3 +193,37 @@ const prodItems = (items.map((item)=>{
       navigation too    
       history.push vs history.replace || push helps in getting loop. || replace will replace and break loop. 
 
+    31. Preventing Navigation
+       <Prompt when = {boolean} message = "String"/>
+
+    32. How can you show a prompt before navigating away from a specific page?
+         use of <Prompt/> component react-router provides.  
+    33. How can you prevent navigation for a specific link in menu?
+          use of function with message attribute
+                          <Prompt when={!dataEntered} message={(location, action) => {
+                               if (location.pathname === "/about") {
+                                    return false;
+                                    } else {
+                                     return true;
+                                   }
+                                  }} />
+    34.What is  Query Parameters
+          Query Parameters are attached to the end of URL after a '?'
+          localhost:3000/tutorials/ts?price = $80
+          //key value onto query 
+          function useQuery(){
+            return new URLSearchParams("?price=$20"); || URLSearchParams is not a react-router elements. Its a javaScript interface which gives various method to work with a query string of a URL
+          }
+
+          useLocation().search returns object that contains search method which exactly returns query  paramas. 
+          useQuery(); hook to get urlQuey key:value
+          query.get('queryKey');
+  35. var before '?' is a key to query parameter '+' in url represents an empty space, and & represents the sperators
+
+  36. What is hte purpose of useLocation() hook?
+      It is useful, as it returns the location object which contains various values of the current URL
+      Generally we use it whenever we have to deal with current location of URL, or even query  String Parameter values. 
+
+      It returns new location everytime the URL changes, somewhat like the state which is updated on everyChange. 
+
+
