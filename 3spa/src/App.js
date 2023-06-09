@@ -1,7 +1,7 @@
 import About from './components/About';
 import Home from './components/Home';
 import Products from './components/Products';
-import { Routes, Route, Link, useRouteMatch } from "react-router-dom"
+import { Routes, Route, useRouteMatch, NavLink } from "react-router-dom"
 
 function App() {
   const { path, url } = useRouteMatch();
@@ -9,9 +9,9 @@ function App() {
     <div className="App">
 
       <ul>
-        <li> <Link to='/home'>HOME</Link> </li>
-        <li> <Link to='/about'>ABOUT</Link> </li>
-        <li> <Link to='/products'>PRODUCTS</Link> </li>
+        <li> <NavLink ativeClassName="selected" to='/home'>HOME</NavLink> </li>
+        <li> <NavLink to='/about'>ABOUT</NavLink> </li>
+        <li> <NavLink to='/products'>PRODUCTS</NavLink> </li>
       </ul>
 
       <Routes>
