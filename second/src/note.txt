@@ -123,6 +123,8 @@ const prodItems = (items.map((item)=>{
       //this will reload the page which is not efficent so Single-Page_Application got introduced. 
       //single page appliaction SPA will only renders onto client side. the renderig or refetching the html is not required. 
 
+??????????????????????????????????????????ROUTE??????????????????????????????????????????????????????
+
   22.. Route Paramaters. 
 
       //How can you link dynamic Routes? || How do you link Parameters witha Route?
@@ -160,4 +162,34 @@ const prodItems = (items.map((item)=>{
         <Route exact path = "/">
         {validUser ? <Redirect to = "/dashboard"/> : <InvalidUser/>}
         </Route>
+    26. No Match
+        How would you configure the match-all/catch-all or 404 Not Found Kind of route?
+          use of wildCard Character "*" Route path= "*' we can implement, if no any match is found then go to the particular Routed Page.  
+
+        Explain the use of useLocation() hook. 
+        => It returns the location object which has the value of active url
+        =>In a way it's like window.location of JavaScript. 
+        When you have to trigger an event on URL change. it is vaery useful   
+    
+    27. <NavLink> VS. <Link/>
+        //Link prevents Page refresh on renders
+        //Navlink => allows to appply css with attributes liks activeClassName and activeStyle
+
+    28. Difference between Link and NavLink 
+        // NavLink gives us the option to apply better styling. It has activeClassName
+        // & activeStyle attributes which are really helpful to design more effective & attractive menus. 
+    29. Differnece between activeClassName and activeStyle of Navlink ?
+        activeClassName takes a string as a value, activeStyle takes an object/object literals
+        both activeClassName & activeStyle executes on active link only. 
+    
+    30. Explain isActive attribute used with NavLink
+      When the link is active, you have match object and location which can be used to add more logic to active link. 
+
+    31. useHistory() hook 
+      useHistory() hook returns the history object which you can refer to deal with the history programmatically.
+
+      **! use History is depreciated, current useNavigate(). 
+      goback features can be implemented. || go ||goBack || goForward || provides location. 
+      navigation too    
+      history.push vs history.replace || push helps in getting loop. || replace will replace and break loop. 
 

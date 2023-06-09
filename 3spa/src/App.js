@@ -1,24 +1,18 @@
 import About from './components/About';
 import Home from './components/Home';
 import Products from './components/Products';
-import { Routes, Route, useRouteMatch, NavLink } from "react-router-dom"
+import { Routes, Route, NavLink, useNavigate, useParams } from "react-router-dom"
 
 function App() {
-  const { path, url } = useRouteMatch();
+  const history = useNavigate();
+  const params = useParams();
+  console.log('Return from params', params);
+  console.log('Return from history object', history);
   return (
     <div className="App">
-
-      <ul>
-        <li> <NavLink ativeClassName="selected" to='/home'>HOME</NavLink> </li>
-        <li> <NavLink to='/about'>ABOUT</NavLink> </li>
-        <li> <NavLink to='/products'>PRODUCTS</NavLink> </li>
-      </ul>
-
-      <Routes>
-        <Route path='/home' element={Home} />
-        <Route path='/about' element={About} />
-        <Route path='/products' element={Products} />
-      </Routes>
+      <div>
+        Onto Landing Page
+      </div>
 
 
     </div >
