@@ -230,7 +230,7 @@ const prodItems = (items.map((item)=>{
     
     37. What is  Props drilling?:
          Passing data from component to component with props. 
-    38. Is it always good to avoid prop-drilling pattern? Shoudl you put the global state all the time using context API or redux?
+    38. Is it always good to avoid prop-drilling pattern? Should you put the global state all the time using context API or redux?
           => one or two level of component we use props: if level increases on high better to use global state
           => when it is getting complex with various level, then certainly we choose to make few data peices GLobal 
 
@@ -240,6 +240,7 @@ const prodItems = (items.map((item)=>{
   30. Explain the concept of context API and how do you use it into your Project?
      Whenever there is a need to have some peices of data vailable to variour/multiple componenets, (maybe) entire application,
      then we use context API. IT consists of 3 majour steps. 
+
 
      Context API setup
       1.Create Context
@@ -282,3 +283,33 @@ const prodItems = (items.map((item)=>{
         It takes the context as parameter and returns context value. 
     35. Will the component using useContext() hook re-render everytime the context value changes?
       => yes, if there is change in global context, it will re-render the compoent . 
+
+  ?????????????????????????????????REDUX??????????????????????????????????????????????????????????????
+State management ith redux. 
+1. Create the GLobal Store & Reducer. 
+2. Use the <Provider> to pass/provide the store data
+3. Access the store data at component level
+4. Dispatch action if there are events. 
+
+   * Whenever there is an action like click events from the component, we dispatch the action type along with the data called payload. 
+    ex:-> dispatch({type: 'ADD'})
+          dispatch({type:'ADD', payLoad: {}})
+          dispatch({type:'ADD', value: 0})   || value can be set to anything like, String/Number/ObjectLiterals/Array
+
+          //information passed with dispatch is called payload. 
+
+events=> dispatch(type,payLoad)=>ReducerFunction(state, action)
+:> Reducer Function holds the action type when matches executes fn
+
+Reducer becomes a global function, 
+where we are going to deal/manipulate with the state & dispatch() is a method whcih is called form the component
+on every event. 
+
+  36.Which package do you need to implement redux with react applicatoin?
+    npm install --save redux react-redux
+
+  37. In which Scenario do you have to use redux or a similar framework? 
+Whenever you hae an application which has a larger size or data set- there will be data shared amoung various components or the entir app on such scenerio we nned to use it. 
+
+28.
+
