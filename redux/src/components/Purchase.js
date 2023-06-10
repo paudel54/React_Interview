@@ -5,6 +5,7 @@ import React from 'react'
 const Purchase = () => {
     const dispatch = useDispatch();
     const products = useSelector((state) => state.products)
+    const loginDet = useSelector((state) => state.loginDet)
     const purchaseHandler = (e) => {
         // console.log(e);
         // Banana - $9
@@ -20,7 +21,7 @@ const Purchase = () => {
     }
     return (
         <div className='customDiv'>
-            <h3> Purchase Component</h3>
+            <h3> Purchase Component - user:- {loginDet}</h3>
             <hr />
             {/* Passing out syntentic event on handler for select element */}
             <select onChange={(e) => purchaseHandler(e)}>

@@ -369,4 +369,4 @@ Depreciated . How does the mapStateToProps() method works?
       }
     }
 
-  43. 
+  43. Organizing reducers into more proper: combined Reducer is depreciated => Modern way is use of Slices. 

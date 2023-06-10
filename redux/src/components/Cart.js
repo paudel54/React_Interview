@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 const Cart = () => {
     const cart = useSelector((state) => state.cart);
+    const loginDet = useSelector((state) => state.loginDet)
     const dispatch = useDispatch();
     // Creating delete handler. 
 
@@ -14,7 +15,7 @@ const Cart = () => {
 
     return (
         <div className='customDiv'>
-            <h3>Cart Component</h3>
+            <h3>Cart Component - {loginDet}</h3>
             <hr />
             {
                 cart.map((product, index) => {

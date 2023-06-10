@@ -9,7 +9,9 @@ const initData = {
         { pName: "Mango", price: 200 }
     ],
     cart: [],
-    total: 0
+    total: 0,
+    users: ['admin', 'manager', 'end-user'],
+    loginDet: 'None'
 }
 // the reducer has 2 parameter state and action: action receives the Object Literal(value) from dispatch. 
 const reducer = (state = initData, action) => {
@@ -36,12 +38,15 @@ const reducer = (state = initData, action) => {
             total: state.total - action.payload.price,
         }
     }
-
+    if (action.type === 'LOGIN') {
+        return {
+            ...state, loginDet: action.loginDet
+        }
+    }
 
 
     return state
 }
-
 // creating Store
 const store = createStore(reducer);
 export default store;
