@@ -329,7 +329,28 @@ const store = createStore(reducer);
       react-redux is a connector is just to connect component and redux store. 
   step:2 PROVIDE THE store to entire application with <Provider> compoent from react-redux. 
         It make redux store avaiale to any nested components. 
-
+39. Explain the provider component usages. 
         <Provider store = {store}>
             <App/> || if you want to provide access to only some of components then wrap woth componet only
         </Provider>
+    || Our goal is to make the store object available to the entire application of the component whcih we reap on 
+
+39. Is it essential to put <Provider> inside index.js?
+    No, its not, Since, its highest level so we prefer the app is rendered, 
+40. Explain the difference between useStore() & useSelector() hooks.   
+     useSelector() hook to get access the specific data instead of instead store! useStore() to access entrie store. 
+     we dont need useStore() i.e total store value, we need specific value at specific component so we use useSelector() wrt useStore() for better performance.
+      //useSelector receives a function where state is passed and specific value is retained. 
+     const products = useSelector((state)=>state.products);
+     const cart = useSelector((state)=>state.cart);
+     const total = useSelector((state)=>state.total); and ... 
+
+41. explain the flow of event handling with redux?
+    reducer are global function that helps in global updates. 
+    !! IN REDUX whenever there is click events or events on component it has to be dispatched into reducer function that updates
+    Global state. 
+
+42. How do yo dispatch events with hooks? or Explain useDispatch hook
+    const dispatch = useDispatch();
+    The useDispatch() hook returns a reference to the dispatch function from the redux store. 
+    dispatch({{type: 'ACTION', payload: value}}) holds obj literal of type and payload

@@ -1,7 +1,8 @@
 import React from 'react'
-
+import { useSelector } from 'react-redux';
 const Total = () => {
-    const total = 0;
+    // accessing global store value form component. 
+    const total = useSelector((state) => state.total);
     return (
         <div className='customDiv'>
             <h3>This is Total Component</h3>
