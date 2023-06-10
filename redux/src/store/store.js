@@ -27,6 +27,18 @@ const reducer = (state = initData, action) => {
 
         }
     }
+
+    if (action.type === 'DELETE') {
+        console.log('lets check out what comes in action', action)
+        return {
+            ...state,
+            cart: state.cart.filter((i, index) => index !== action.payload.index),
+            total: state.total - action.payload.price,
+        }
+    }
+
+
+
     return state
 }
 

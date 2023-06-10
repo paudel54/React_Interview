@@ -369,4 +369,4 @@ Depreciated . How does the mapStateToProps() method works?
       }
     }
 
-  
+  43. 
