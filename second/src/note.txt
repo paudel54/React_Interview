@@ -354,3 +354,19 @@ const store = createStore(reducer);
     const dispatch = useDispatch();
     The useDispatch() hook returns a reference to the dispatch function from the redux store. 
     dispatch({{type: 'ACTION', payload: value}}) holds obj literal of type and payload
+
+Depreciated . How will you connect the class based React component to redux store?
+    The connect() function allows the class based component to connect with redux store
+    connect()(Component)
+    connect(mapStateToProps)(Component)
+    connect(mapStateToProps,mapDispatchToProps)(Component)
+    connect(null, mapDispatchToProps)(Component)
+Depreciated . How does the mapStateToProps() method works?
+    It is a function wich is called anytime the store is updated. 
+    const mapStateToProps = (state)=>{
+      return {
+        products:state.products ?? state props
+      }
+    }
+
+  
