@@ -4,8 +4,8 @@ import React from 'react'
 
 const Purchase = () => {
     const dispatch = useDispatch();
-    const products = useSelector((state) => state.products)
-    const loginDet = useSelector((state) => state.loginDet)
+    const products = useSelector((state) => state.pr.products)
+    const loginDet = useSelector((state) => state.lr.loginDet)
     const purchaseHandler = (e) => {
         // console.log(e);
         // Banana - $9

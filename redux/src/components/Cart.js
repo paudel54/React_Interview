@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 const Cart = () => {
-    const cart = useSelector((state) => state.cart);
-    const loginDet = useSelector((state) => state.loginDet)
+    const cart = useSelector((state) => state.pr.cart);
+    const loginDet = useSelector((state) => state.lr.loginDet)
     const dispatch = useDispatch();
     // Creating delete handler. 
 

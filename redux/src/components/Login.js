@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 
 const Login = () => {
-    const users = useSelector(state => state.users);
+    const users = useSelector(state => state.lr.users);
     const dispatch = useDispatch();
     const loginHandler = (e) => {
         let loginDet = e.target.options[e.target.selectedIndex].text;
@@ -20,7 +20,6 @@ const Login = () => {
                         </option>
                     )
                 })
-
                 }
             </select>
         </div>

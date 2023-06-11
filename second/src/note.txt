@@ -370,3 +370,9 @@ Depreciated . How does the mapStateToProps() method works?
     }
 
   43. Organizing reducers into more proper: combined Reducer is depreciated => Modern way is use of Slices. 
+      //Reducers are seperately organized into different files so later they can be combined as one. 
+  
+  44. Explain the code pattern if you use combineReducers() utility function. 
+        Every reducer is going to be a seperate file and which is merged in index.js
+        we use combineReducer method with accepts obj literals with key value param. Key is the main entry to access any reducers value
+        state.key.initDefault
