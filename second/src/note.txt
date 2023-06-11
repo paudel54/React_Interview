@@ -384,4 +384,67 @@ Depreciated . How does the mapStateToProps() method works?
 
   46. Advantage of defining action type identifiers!.
         This sharply reduces typo error managing action type onto seperate files. 
-        
+    
+  47. Asynchronous Redux. 
+      //There is another challenging scenario with redux when we have to configure asynchoronous call. 
+      
+      //pure function means we can predict the output. 
+      //Impure function mutates variables/state/data outside of it's lexical scope. 
+      //Impure function it's not sure what output because we are going to fetch data.
+      ////Asynchronus process are impure only.
+
+!! inside REDUCER FUNCTION we don't put asynchoronous call or APIS
+!! REDUCER SHOULD ONLY CONTAIN PURE FUNCTIONLITY 
+!! API CALL BEING IMPURE FUNCTION CANNOT BE PLACED INSIDE REDUCER. 
+
+!!docs reference. 
+By iteslf, a Redux store doesn't know anything about async logic. It only knows how to synchronously dispatch actions, update the  state 
+by calling the root reducer function, and notify the UI that something has changed. ANy asynchronicity has to happen outside the store. 
+
+48. Async Redux: implementaion -validateUser();
+
+  dispatch({type: LOGIN, loginDet:loginDet})
+  
+  ==> API:: 
+  const validateUser= ()=>{
+    //API call
+    //validation
+    dispatch((type:LOGIN, loginDet:loginDet))
+  }
+  ==> const loginReducer = ( state=initData, action )=>{  }
+
+  BIRTH OF Redux Thunk Middleware!!
+  Redux thunk Middleware will make the dispatch object available whenever you
+  have dispatched 
+  the acton..
+
+  !!!!! thunk being a Middleware gets executed on every dispatch and does receive the dispatch object. 
+  !!!!! npm package:: npm install redux-thunk
+
+49. Thunk is function : function we return is thunk function. 
+    function() wrapper{
+      return  function thunk(dispatch){
+        //API/ setTimeOut().  
+      }
+    }
+...................................clearner code without function name arrow fn in action ................
+  validateUser(loginDet)=>{
+    //return with no function name!!
+    return(dispatch)=>{
+        //setTimeOut or API call. 
+    }
+  }
+
+50. How will you handle asynchronous call from redux?
+                    OR 
+          What is redux thunk?
+
+It can be handled in different way. #Redux-Saga is also alternative but,
+redux saga is extensively used when there are larger appliactions & it is easier to handle with lot of functions calls 
+[the dispatch() is available with the help of redux-thunk]
+
+51. Explain the steps of configuring redux-thunk. 
+    1. include {applyMiddleware} from redux.
+    2. import thunk function from 'redux-thunk'.
+    3. pass thunk fn to createStore().
+    5. onto actions make a redux thunk with dispatch in return. 

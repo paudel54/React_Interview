@@ -10,7 +10,10 @@ import productReducer from './store/productReducer';
 
 // we are creating a combine reducer an createStore for managing multiple redux stores. 
 // combineReducers and createStore are managing the state. 
-import { combineReducers, createStore } from 'redux';
+
+// inorder to apply middleware we need to use this function. and  npm i redux-thunk. To activate middleware. 
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 //createStore() appepts reducer as input since, we have multiple Reducers!! 
 //combile reducer assists onthis regard. 
 
@@ -22,7 +25,12 @@ const rootReducer = combineReducers({
   //to access lr=> we need to do it as : state.lr.loginDet || users
 })
 
-const store = createStore(rootReducer);
+// we can use n number of middlewares seperated by commas if we need to 
+//can add custom middlewares too but. applyMiddleware is the key to activate middleware. 
+// thunk being middleware will execute
+//automatically when there is
+//a dispatch() method executed.
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
