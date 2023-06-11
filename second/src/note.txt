@@ -448,3 +448,53 @@ redux saga is extensively used when there are larger appliactions & it is easier
     2. import thunk function from 'redux-thunk'.
     3. pass thunk fn to createStore().
     5. onto actions make a redux thunk with dispatch in return. 
+
+52. MODERN APPROACH TO REDUX DEVELOPMENT: REDUX TOOLKIT (RTK):
+  It is developed by the redux & react-redux team only & it provides a more enhanced way to write redux code. 
+   
+   The Redux Toolkit package is intended to be the standard way to write Redux logic. It was originally created to help address three common concerns about Redux:
+
+    "Configuring a Redux store is too complicated"
+    "I have to add a lot of packages to get Redux to do anything useful"
+    "Redux requires too much boilerplate code"
+
+    !! instead of combineReducer() old approaches we use state slices. 
+    !! the constant & actions won't be needed instead, function provided by Redux Toolkit will be used. 
+    !! Redux Toolkit is a very modern & enhanced library which makes the redux development very easy and more organized. 
+
+    installation with  npm install react-redux & redux Toolkit
+      npm install @reduxjs/toolkit react-redux
+
+53. What is Redux Toolkit and why would you use it?
+    => It is a new approach a modern approach for the redux development. 
+    There were various compilcations while using the redux like, configuring the store
+    & managing multipe reducers etc.. All those coding patterns are made easier with redux toolkit,
+    hance redux toolkit is an appropriate approach to choose instead or redux. 
+
+    syntax :=>Slice Object with object literals. 
+    //createSlice() uses createAction() & createReducer() internally.
+    const slice =  createSlice({
+      name: '',
+      initalState: initialData,
+      reducers: {
+        //reducer function .|| actions are defined here
+      }
+    })
+
+54. What is redux state slice and how do you Create it?
+    When it comes to dealing with reducers & actions in redux toolkit, we create a seperate slice.
+    createSlice() helps us to create the reducer and actions with a single object in an easier way.
+
+55. How is the immutable state is managed in spite of direct state change inside slice reducer?
+    It appears that we are directly changing the state, it doesn't actually mutatate the state bacause it uses Immer library
+    which detects chages to a "draft sate" and produces a brand new immutables state based off those changes. 
+
+    // RTK allows to write "mutating" logic in reducers, It doesn't actually mutate the state because it uses the
+    // Immer library, which detects changes to a "draft State" & produces a brand new immutable
+    //state based off those changes.
+
+56. configureStore() - Store Creation. 
+      How would you create a store using the redux toolkit?
+      we need a configureStore method and reducers, where multiple are combined and organized as combined reducer. 
+
+57. How would you configure middlewares in redux?
