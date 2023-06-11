@@ -1,10 +1,12 @@
+import * as actions from './actions'
+
 const initData = {
     users: ['admin', 'manager', 'end-user'],
     loginDet: 'None'
 }
 // the reducer has 2 parameter state and action: action receives the Object Literal(value) from dispatch. 
 const loginReducer = (state = initData, action) => {
-    if (action.type === 'LOGIN') {
+    if (action.type === actions.LOGIN) {
         return {
             ...state, loginDet: action.loginDet
         }

@@ -1,12 +1,13 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import { LOGIN } from '../store/actions';
 
 const Login = () => {
     const users = useSelector(state => state.lr.users);
     const dispatch = useDispatch();
     const loginHandler = (e) => {
         let loginDet = e.target.options[e.target.selectedIndex].text;
-        dispatch({ type: 'LOGIN', loginDet: loginDet });
+        dispatch({ type: LOGIN, loginDet: loginDet });
     }
     return (
         <div className='customDiv'>

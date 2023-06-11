@@ -1,5 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import { DELETE } from '../store/actions';
+
 const Cart = () => {
     const cart = useSelector((state) => state.pr.cart);
     const loginDet = useSelector((state) => state.lr.loginDet)
@@ -10,7 +12,7 @@ const Cart = () => {
         // itemIndex will be sent as payload or obj to reducer Function. 
         // console.log(index);
         // Passing out object as payload not single element 
-        dispatch({ type: 'DELETE', payload: { index, price } });
+        dispatch({ type: DELETE, payload: { index, price } });
     }
 
     return (

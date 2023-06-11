@@ -376,3 +376,12 @@ Depreciated . How does the mapStateToProps() method works?
         Every reducer is going to be a seperate file and which is merged in index.js
         we use combineReducer method with accepts obj literals with key value param. Key is the main entry to access any reducers value
         state.key.initDefault
+
+  45. Action Type Constants. Older approcahes but important. 
+      => in reducer (action.type === 'LOGIN').
+            typing by default can lead to typo error to resolve this came to play
+            //putting all actions on seperate file with giving const Name. 
+
+  46. Advantage of defining action type identifiers!.
+        This sharply reduces typo error managing action type onto seperate files. 
+        

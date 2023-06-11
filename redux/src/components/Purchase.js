@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-
+import { PURCHASE } from '../store/actions';
 import React from 'react'
 
 const Purchase = () => {
@@ -16,7 +16,7 @@ const Purchase = () => {
         // inorder to update global store we  use dispatch method. 
         // console.log("Object List", obj);
         // dispatch always acceptes object literals to update store  value.  
-        dispatch({ type: 'PURCHASE', payLoad: obj });
+        dispatch({ type: PURCHASE, payLoad: obj });
         //dispatch immediately calls for reducer function .. reducer fn consists of state & action. this object  is passed to castion. 
     }
     return (

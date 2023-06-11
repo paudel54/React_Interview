@@ -1,3 +1,6 @@
+
+import * as actions from './actions'
+
 // Create product as Reducer functions. 
 const initData = {
     // we are keeping the default value of product only managing its global state. 
@@ -14,7 +17,7 @@ const initData = {
 // the reducer has 2 parameter state and action: action receives the Object Literal(value) from dispatch. 
 const productReducer = (state = initData, action) => {
     // console.log('Lets Explore and see whats inside action obj', action);
-    if (action.type === 'PURCHASE') {
+    if (action.type === actions.PURCHASE) {
         return {
             // Keeping products and total as is it..
             // this single to single updates will be handled by spread operator
@@ -28,7 +31,7 @@ const productReducer = (state = initData, action) => {
         }
     }
 
-    if (action.type === 'DELETE') {
+    if (action.type === actions.DELETE) {
         console.log('lets check out what comes in action', action)
         return {
             ...state,
