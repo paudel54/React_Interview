@@ -513,6 +513,63 @@ redux saga is extensively used when there are larger appliactions & it is easier
       !! when we use configureStore() of redux-toolkit(RTK), we don't need to configure thunk seperately. 
         so main purpose of thunk is to make dispatch available for middleware. since reducer accepts only pure functions.
         so async process are impure hence to sort this out concept of thunk was introduced. 
+      
+    In the redux-toolkit(RTK) there are many other ways to implement ansynchoronous processess and middlewares. 
+
+60. Do you need to import thunk if you are using the configureStore() to create the store?
+    denifately not!.  RTK configureStore() automatically cmobile slice reducers, and adds whatever Redux
+    middleware we supply, includes redux-thunk by default and enables use of the Redux DevTools Extension.  
+
+????????????????????????????????????????HTTP??????????????????????????????????????????????????????????????????
+REACT(client) => XXX database
+REACT(client) => API ( Web service / API/ REST API/ GRAPHQl) => database
+API communicates with db and client for data request and response. 
+
+    !!To make the Http request from react app, either we use core JavaScript or we may use framework like Axios or you can use jQuery also. 
+
+People uses core JS method fetch() API or Axios is also great choice for ease data communication. 
+
+The Fetch API is better, faster and more efficient way to deal with Http or network requests. 
+XMLHTTP request , were in practise before ES6
+fetch API -ES6 onwards. 
+
+syntax: 
+    const responsePromoise = fetch(url, [optional object]);
+    url: its mandatory > It is a resource where we want to make request to . 
+
+    [optional object]
+    => holds keys and info set with http call for ex. 
+    if nothing mentioned it will be default get request. 
+
+    SYNTAX TO MAKE POST REQUEST!!!! 
+
+const response = fetch('http://URL', {
+  method: 'POST',
+  //headers related information is to make request. 
+  headers: {
+    'Content-Type': 'application/json; charset = utf-8'
+  },
+  //body where we make request to URL . 
+  body: JSON.stringify(data)
+})
+like method headers and body there are also other options like mode, cache, redirect etc. 
+
+
+61. Readable Stream onto response on api call:
+  readable Stream => If we read response.body- it will be the data constantly receiving from the server. 
+
+
+62. Explain the fetch API functionality. 
+  =>fetch API helps in making an AJAX call
+  => Add data - perform CRUD operations. 
+  => Downloading / uploading files - dealing with images.  etc . 
+
+63. How would you make delete with fetch api()?
+      Make a  'DELETE' request instead of post!
+
+
+
+
 
 
 
