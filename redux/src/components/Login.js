@@ -1,9 +1,13 @@
-// this is login component. 
+// this is login component. =>to action.js=> loginSlice =>update the State. 
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import { validateUser } from '../store/actions';
+
 // import { LOGIN } from '../store/actions';\
-// import slices. 
-import { userLogin } from '../store/loginSlice';
+// // import slices. 
+// import { userLogin } from '../store/loginSlice';
+// commented userLogin so i can take it to middleware for validation and dispatch action for login. 
+
 // import { validateUser } from '../store/actions';
 
 const Login = () => {
@@ -14,7 +18,9 @@ const Login = () => {
         // dispatch({ type: LOGIN, loginDet: loginDet });
         // dispatch(validateUser(loginDet));
         // update store with dispatch: userLogin() is reducer fn of a slice login: and loginDet is payload to it 
-        dispatch(userLogin(loginDet));
+        // dispatch(userLogin(loginDet));
+        //apply middleware. 
+        dispatch(validateUser(loginDet));
     }
     return (
         <div className='customDiv'>

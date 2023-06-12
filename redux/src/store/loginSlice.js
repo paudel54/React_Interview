@@ -17,7 +17,7 @@ const loginSlice = createSlice({
             // action receives an object passed from component. 
             // Object { type: "login/userLogin", payload: "manager" }
             // state: Proxy { <target>: {…}, <handler>: {…} } ! we better focus on state
-            console.log('checking state', state)
+            // console.log('checking state', state)
             state.loginDet = action.payload
         }
     }

@@ -509,3 +509,11 @@ redux saga is extensively used when there are larger appliactions & it is easier
     
 58. Make synchronous login => chaeck application outpur => and convert async
 
+59. Thunk async: RTK
+      !! when we use configureStore() of redux-toolkit(RTK), we don't need to configure thunk seperately. 
+        so main purpose of thunk is to make dispatch available for middleware. since reducer accepts only pure functions.
+        so async process are impure hence to sort this out concept of thunk was introduced. 
+
+
+
+

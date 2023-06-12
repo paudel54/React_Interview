@@ -1,3 +1,4 @@
+import { userLogin } from './loginSlice';
 // If we have bigger file we can manage to have different actions files. for login delete purchase seperately.
 export const PURCHASE = 'PURCHASE';
 export const DELETE = 'DELETE';
@@ -15,7 +16,9 @@ export const validateUser = (loginDet) => {
         //Redux thunk Middleware will make the dispatch object available whenever you have dispatched the acton.
         // to resolve this dispatch error redux thunk fn  middleware  was introduced. 
         setTimeout(() => {
-            dispatch({ type: LOGIN, loginDet: loginDet });
+            // dispatch({ type: LOGIN, loginDet: loginDet });
+            // earlier we need to setup for getting dispatch for react-thunk now RTK auto configures.
+            dispatch(userLogin(loginDet));
         }, 2000)
     }
 }

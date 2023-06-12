@@ -21,7 +21,7 @@ import productSlice from './store/productSlice';
 // configureStore() will create the store & will also combinereducers for us. 
 import { configureStore } from '@reduxjs/toolkit';
 
-import thunk from 'redux-thunk';
+// import thunk from 'redux-thunk';
 //createStore() appepts reducer as input since, we have multiple Reducers!! 
 //combile reducer assists onthis regard. 
 
