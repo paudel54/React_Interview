@@ -573,7 +573,15 @@ like method headers and body there are also other options like mode, cache, redi
     
     Earlier and even today axios was used to make an http call, you still can use it. but the newer
     fatch API approach is more appropriate & developers are using it extensively. 
-    
+
+67. How will you dispaly the fetched data from the server ?
+  When it comes to displaying the fetched data from the server, you have to take the state unless you have the state, the data
+  won't be rendered. 
+
+  Every new data being fetched, it is automatically rendered as you have taken it as state. 
+  
+
+
 
 
 
