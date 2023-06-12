@@ -580,6 +580,23 @@ like method headers and body there are also other options like mode, cache, redi
 
   Every new data being fetched, it is automatically rendered as you have taken it as state. 
   
+68. Error Handling when server not avilable. 
+
+  !! fetch() API returns HTTP error codes, but doesnot throw the error as real error. 
+    axios can handle this. react tries to render the "user" can be anything data which 
+    is actually not there.
+
+
+    !! even we we put catch with fetch API()
+      we do have to take care 
+      validation and manually raise error.
+      thats how we handle error with fetch API. Axios does it internally. 
+
+69. How will you handle the erros 
+    with http calls with fetch() APi?
+    => Inspite writing catch block 
+    =>we must ensure we check response.ok
+    =>because fetch API() will get http error code But that is not JS generated error code. 
 
 
 

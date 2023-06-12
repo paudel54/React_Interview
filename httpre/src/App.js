@@ -2,13 +2,16 @@ import './App.css';
 import { useState } from 'react';
 import User from './components/User';
 import Todo from './components/Todo';
+import Error from './components/Error';
+
 function App() {
   // state for fetching data from API's and storing into an empty array. 
   const [users, setUsers] = useState([]);
   const [todos, setTodos] = useState([]);
   // state management flag for conditional rendering:
-
   const [userData, setUserData] = useState(true);
+  // State management flag for Error handling or catching errors.
+  const [errorFlag, setErrorFlag] = useState(false);
 
   // fetching data with fetch api //GET REQUEST
   //Json placeholder website gives us testing REST API : 
@@ -18,13 +21,25 @@ function App() {
     // fetch method returns promise object so we can chain it with .then() .catch() method to handle response. 
     fetch('https://jsonplaceholder.typicode.com/users')
       // step:1 this then gives us JSON data
-      .then(response => response.json())
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("ERROR !!!!! ")
+        }
+      })
       // step: 2  this callback logs the response  
       .then((json) => {
         // updating the api data insto state. 
         // console.log(json)
         setUsers(json);
       },)
+      .catch((error) => {
+        // console.log('Error Caugeht', error);
+        setErrorFlag(true);
+      });
+    // handling Error chaining the .catch() method onto it. 
+
     setUserData(true);
 
   }
@@ -37,10 +52,20 @@ function App() {
       .then(json => {
         setTodos(json);
       })
+      .catch((error) => {
+        setErrorFlag(true);
+      });
     // .then(todos => console.log(todos))
     // flag to manage 
     setUserData(false);
   }
+
+  if (errorFlag) {
+    return (
+      <Error />
+    )
+  }
+
 
   return (
     <div className="App">
