@@ -598,10 +598,15 @@ like method headers and body there are also other options like mode, cache, redi
     =>we must ensure we check response.ok
     =>because fetch API() will get http error code But that is not JS generated error code. 
 
+???????????????????????REACT WITH TYPESCRIPT?????????????????????????????????????????????
 
+The main purpose of TypeScript is for static type Checking
+. I.e It allows to implement Strict type Checking 
+and helps to write clean code with more validation so 
+at the development time itslef you get to know possible compile time Errors. 
 
-
-
+  TS =>conversion by (TSC TypeScript Compiler) to => JS
+  npm install -g typescript 
 
 
 
