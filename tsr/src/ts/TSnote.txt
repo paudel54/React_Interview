@@ -4,3 +4,16 @@
     In JS we dont have a choice to 
     explicitely decide the datatype. 
 In typescript we have that choice. 
+
+
+2. Expain the syntax of declaring a TypeScript variable.  
+      let variableName:datatype;
+      const variabename:datatype;
+      var variablename:datatype;
+    ex1: let person:string = 'paudel';
+    ex2: const prime:number = 7;
+
+3. Is there any convention or rule to follow while declaring a variable?
+    a. variable can't start with number.
+    b. variable should not have space but use underscore.
+    c. variable can contain alphabet or a number. 
