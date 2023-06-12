@@ -17,3 +17,13 @@ In typescript we have that choice.
     a. variable can't start with number.
     b. variable should not have space but use underscore.
     c. variable can contain alphabet or a number. 
+
+4. When does typeScript infers the data type?
+    when we have given value to it exmp: let a = 2; || infers it as type of number 
+    when giving default value for function parameter. sum(a=3,b=7);  on this case a and b both holds infered type of number 
+
+    function sum(a=3,b=7):number {
+      //here the return type of the function is number. 
+    }
+    let a = sum(2,9);
+
