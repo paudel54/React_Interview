@@ -608,6 +608,20 @@ at the development time itslef you get to know possible compile time Errors.
   TS =>conversion by (TSC TypeScript Compiler) to => JS
   npm install -g typescript 
 
+70. Expain the syntax of declaring a TypeScript variable.  
+      let variableName:datatype;
+      const variabename:datatype;
+      var variablename:datatype;
+    ex1: let person:string = 'paudel';
+    ex2: const prime:number = 7;
+
+71. Is there any convention or rule to follow while declaring a variable?
+    a. variable can't start with number.
+    b. variable should not have space but use underscore.
+    c. variable can contain alphabet or a number. 
+
+
+
 
 
 

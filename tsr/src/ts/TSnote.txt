@@ -1,0 +1,6 @@
+1. JS have var and let to declare variables and const to decalre constant
+    It is same in TypeScript.
+                but 
+    In JS we dont have a choice to 
+    explicitely decide the datatype. 
+In typescript we have that choice. 
