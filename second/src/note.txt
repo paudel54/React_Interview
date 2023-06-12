@@ -567,6 +567,13 @@ like method headers and body there are also other options like mode, cache, redi
 63. How would you make delete with fetch api()?
       Make a  'DELETE' request instead of post!
 
+64. How do you call a REST API in your react application ?
+                    OR
+          How do you make an http call?
+    
+    Earlier and even today axios was used to make an http call, you still can use it. but the newer
+    fatch API approach is more appropriate & developers are using it extensively. 
+    
 
 
 
