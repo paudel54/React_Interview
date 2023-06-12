@@ -60,8 +60,9 @@ const productSlice = createSlice({
         },
 
         deleteItem: (state, action) => {
+            console.log('action onto delete item', action)
             state.cart = state.cart.filter((i, index) => index !== action.payload.index);
-            state.total = state.total - action.payload.price;
+            state.total = state.total - parseInt(action.payload.price);
         },
     }
 })
@@ -73,4 +74,5 @@ const productSlice = createSlice({
 
 // createReducer() & createAction() is been executed internally by createSlice()
 export const { purchase, deleteItem } = productSlice.actions;
+
 export default productSlice.reducer;

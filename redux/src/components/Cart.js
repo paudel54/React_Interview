@@ -17,8 +17,7 @@ const Cart = () => {
         // Passing out object as payload not single element 
         // dispatch({ type: DELETE, payload: { index, price } });
         // delete item is slice with payload index & price 
-
-        dispatch(deleteItem(index, price));
+        dispatch(deleteItem({ index, price }));
     }
 
     return (
