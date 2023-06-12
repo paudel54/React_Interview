@@ -7,18 +7,22 @@ const initialState = {
     // loginDet is passed down on action.loginDet
     loginDet: 'None'
 }
-
+// Create Slice helps us to create the reducer and actions with object a single object in an easir way. 
 const loginSlice = createSlice({
     name: 'login',
     initialState,
     reducers: {
         userLogin: (state, action) => {
             // here we have no payload becasue only string is passed no any object literals. 
-            state.loginDet = action.loginDet
+            // action receives an object passed from component. 
+            // Object { type: "login/userLogin", payload: "manager" }
+            // state: Proxy { <target>: {…}, <handler>: {…} } ! we better focus on state
+            console.log('checking state', state)
+            state.loginDet = action.payload
         }
     }
 })
-
+// userLogin is a reducer fn
 export const { userLogin } = loginSlice.actions;
 export default loginSlice.reducer;
 

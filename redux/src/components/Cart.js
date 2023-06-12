@@ -1,6 +1,9 @@
+// this is component and we create event 
+//its handled by slice
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { DELETE } from '../store/actions';
+// import { DELETE } from '../store/actions';
+import { deleteItem } from '../store/productSlice';
 
 const Cart = () => {
     const cart = useSelector((state) => state.pr.cart);
@@ -12,7 +15,10 @@ const Cart = () => {
         // itemIndex will be sent as payload or obj to reducer Function. 
         // console.log(index);
         // Passing out object as payload not single element 
-        dispatch({ type: DELETE, payload: { index, price } });
+        // dispatch({ type: DELETE, payload: { index, price } });
+        // delete item is slice with payload index & price 
+
+        dispatch(deleteItem(index, price));
     }
 
     return (

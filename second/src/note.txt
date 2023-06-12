@@ -497,4 +497,15 @@ redux saga is extensively used when there are larger appliactions & it is easier
       How would you create a store using the redux toolkit?
       we need a configureStore method and reducers, where multiple are combined and organized as combined reducer. 
 
+
+57. Explain the "dispatch action" flow with redux toolkit(RTK):
+      form component with reducerfunction with payload. to slices
+
+58. How would you pass and access the payload?
+      we pass it with reducerfn(payload)
+      access with  the slice reducer function onto action 
+
 57. How would you configure middlewares in redux?
+    
+58. Make synchronous login => chaeck application outpur => and convert async
+

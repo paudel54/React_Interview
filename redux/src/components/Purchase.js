@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { PURCHASE } from '../store/actions';
+// import { PURCHASE } from '../store/actions';
+import { purchase } from '../store/productSlice'
 import React from 'react'
 
 const Purchase = () => {
@@ -16,7 +17,10 @@ const Purchase = () => {
         // inorder to update global store we  use dispatch method. 
         // console.log("Object List", obj);
         // dispatch always acceptes object literals to update store  value.  
-        dispatch({ type: PURCHASE, payLoad: obj });
+        // dispatch({ type: PURCHASE, payLoad: obj });
+        // anything that is passe here into dispatch with slice parameter is a payload it transform. 
+        dispatch(purchase(obj));
+        // it goes into slice as payload.obj
         //dispatch immediately calls for reducer function .. reducer fn consists of state & action. this object  is passed to castion. 
     }
     return (
