@@ -649,8 +649,15 @@ at the development time itslef you get to know possible compile time Errors.
   
 77. Create a state named counter which can hava number, null or boolean values.
     const [counter,setCounter] = useState<number|string|boolean|null>(true);
-    
 
+!!REPEATATION:: !! EVENTS INSIDE REACT APPLICATION IS HANDLED WITH THE SyntheticEvent object.!!!!!
+
+                      CLICK EVENTS WITH TS
+78. Write a click event on button with TypeScript.
+e=> synthatic event object. after colon(:) is an element type. with return type void. 
+    const btnHandler = (e:React.MouseEvent<HTMLButtonElement>):void=>{
+      //code
+    }
 
 
 
