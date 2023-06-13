@@ -5,6 +5,7 @@ import Counter from './Counter';
 
 test("Initial value of counter should be 0", () => {
     render(<Counter />);
-    const counterEl = screen.getByText(0);
+    // Implemented getByTestId to test with data-testid
+    const counterEl = screen.getByTestId("cnt");
     expect(counterEl).toBeInTheDocument();
 })

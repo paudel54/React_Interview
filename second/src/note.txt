@@ -738,3 +738,12 @@ test("Initial value of counter should be 0", () => {
   screen.(getAllBy...)=> will thorw error if the element is not found. 
   screen.(findAllBy...)=> returns promise.
   screen.(getAllBy...)=> will thorw error if the element is not found. 
+
+  screen.getByTestId() : It tests the id given to element like <h3 data-testid="abc">
+
+89. 1. How will you use the getByTestID() method?
+                  OR
+    2. Explain the data-testid attribute 
+    => WHen getByTestId() given, it gets us the element reference 
+    just like getElementById():
+  
