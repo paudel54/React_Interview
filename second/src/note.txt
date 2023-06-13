@@ -659,5 +659,7 @@ e=> synthatic event object. after colon(:) is an element type. with return type 
       //code
     }
 
-
+79. Input Event means the type will be <HTMLInputeElement>
+    with the React.ChangeEvent
+    
 
