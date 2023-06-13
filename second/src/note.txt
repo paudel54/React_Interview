@@ -662,4 +662,79 @@ e=> synthatic event object. after colon(:) is an element type. with return type 
 79. Input Event means the type will be <HTMLInputeElement>
     with the React.ChangeEvent
 
-80. 
+80. useRef()
+      to keep reference track of react elements like on click focus to particular input or
+      not sure but it doesn't rerenders unlike state change. it renderes 
+      without state change. 
+
+???????????????????????????????????????????INTRODUCTION TO AUTOMATED TESTING????????????????????????????????
+Testing is one of the most important entity in modern development. 
+Testing can be divided into two main categories:
+1.Manual Testing.
+2.Automated Testing. 
+
+There are 3 main categories of automated testing-
+1.Unit Tests => It is all about checking individual functions,components or basically units of code. 
+2.Integration Tests => components are integrated & test together how they work. Do they work as if working as individual entities?
+3.End-to-End(e2e) Tests => to check entire application and it's flow. 
+
+Out of all these Unit test is major part in project as it checks individual units. 
+
+Testing Libraray for React:
+  Jest with react;
+  other libraries like Jasmine & Mocha 
+
+  Jest is a powerful library with all the tools available in it i.e, assertion mocking, test runners etc. 
+  Jest can do snapshot as well. 
+  
+  Jest can be used for testing pure JS also
+  Enzyme is built for react application only. 
+
+  Jest alone can be used with React applications but Enzyme gives more functionality while dealing with components or basically the UI
+
+81. Explain the difference between JEST and Enzyme!
+  JEST + Enzyme
+  Jest is testing framework for assertion mocking, test runners etc. 
+  Enzyme provides additional testing utilities with dealing with components or UIs and built for react only. 
+
+81. Can we use Enzyme with JEST?
+    Enzyme can be used along without JEST but JEst provides test runner for writing tests.
+    So, commonly, Jest & Enzyme are used together for better React test automations.  
+
+82. How the test files are named?
+      Component name - Product.js
+      Test file - Product.test.js
+83. How would you run the test ?
+      => npm test & for rest of the time test will bein the watch mode, so you just have to make the changes & save to run the test again!
+
+84. What is test driven development?
+* TDD(test driven development Environment)
+  => example: if you have a product component to do then the component testing is written fist with all the validations, then you keep on building the component
+  product & it will keep on checking the test. 
+  =>In Short: Write Test first: then development begins. 
+
+//tests notes:
+85.Expalin the basic syntax of writing the test.
+//description , and anyonymous fn to render componenets or to write assertions. 
+test("Initial value of counter should be 0", () => {
+    render(<Counter />);
+    const counterEl = screen.getByAltText(0);
+    expect(counterEl).toBeInTheDcoument();
+})
+
+86. What do you mean by assertio in test?
+  When we write expect then we have various assertions method after expects(). **assertions** ex: tobeGreaterThan, toBeInTheDocument
+   expect(counterEl).toBeInTheDcoument();
+   => you can derive assertions using the expect() method
+
+87. How would you render component in test?
+    we have render component onto testing library in react and 
+    render(<Counter/>) will render the component virtually for the test. 
+
+88.Expain the screen object of the react testing library?
+    => it allows to deal with various elemnt of vriutal dom=> to get find, get and query selector in different manner
+
+  
+  screen.(getAllBy...)=> will thorw error if the element is not found. 
+  screen.(findAllBy...)=> returns promise.
+  screen.(getAllBy...)=> will thorw error if the element is not found. 
