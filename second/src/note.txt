@@ -646,7 +646,10 @@ at the development time itslef you get to know possible compile time Errors.
 
 76. How will you make the attribute optional?
   "?" is widely used to make the optional argument in TypeScript. 
-
+  
+77. Create a state named counter which can hava number, null or boolean values.
+    const [counter,setCounter] = useState<number|string|boolean|null>(true);
+    
 
 
 
