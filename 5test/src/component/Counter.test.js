@@ -2,6 +2,7 @@
 import React from 'react';
 // fireEvent for testing test events. 
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Counter from './Counter';
 
 test("Initial value of counter should be 0", () => {
@@ -16,7 +17,9 @@ test("On click, it should increment counter by 1", () => {
     const btnEl = screen.getByTestId("btn");
     const counterEl = screen.getByTestId("cnt");
     expect(counterEl.textContent).toBe("0");
-    fireEvent.click(btnEl);
+    // fireEvent.click(btnEl);
+    // similar functionalality with userEvent
+    userEvent.click(btnEl);
     expect(counterEl.textContent).toBe("1");
 })
 

@@ -751,4 +751,31 @@ test("Initial value of counter should be 0", () => {
   Options for generating click events from the test:
     1) userEvent - Companion library of testing library.
     2) fireEvent- Part of react testing library.
-90.
+
+90. What is the difference between useEvent vs FireEvent. 
+//   UserEvent VS. FireEvent!! 
+  UserEvent:: It is companion libray for testing library that provides more advanced 
+  simulation of browser interactions
+                  than the built in  FireEvent
+                  methods. 
+=>If test doesnt have to be interactive with all the events, 
+we can use the fireEvent.click() or any other event available with fireEvent.  
+                      BUT 
+=> if we have a possiblity of other events in the way to be checked, userEvent ought to be used. 
+
+
+91. IN which situation will you choose userEvent over fireEvent?
+    interview_images.            
+
+92. What are matchers used for in a test?    
+          =>In test Environment, there are different situations to check the value, check the element, the presence or 
+          absense of element/ variable. In all such cases we have various comparision options known as matchers, which we use with
+          expect() and that allows us to check various possibilites. 
+//  MATCHER -toBe() or not.toBe() 
+not can be added with most of matchers to negate. toBeNull() or note.toBeNull() matchers to check the null or not null values. 
+
+93. How will you test value for null or not null?
+  => we can use: example: expect(counterEL).toBeNull()
+                      OR: expect(counterEl).not.toBeNull();
+94. Which matcher you will use to compare greater than equal to ?
+       reaact interview_img expect().tobeGreaterThanOrEqual() 
