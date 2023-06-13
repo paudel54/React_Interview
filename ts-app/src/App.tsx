@@ -1,8 +1,13 @@
 import Product from "./components/Product";
 import "./App.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function App() {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const btnRefHandler = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    // set focus on click of button
+    inputRef.current?.focus();
+  };
   //  | is a pipe that signifies value can be of number or String.
   // const [counter, setCounter] = useState<number | string>("Paradise");
   const [counter, setCounter] = useState<number>(1);
@@ -44,6 +49,13 @@ function App() {
           <option value="Orange">Orange</option>
         </select>
       </div>
+      <div>
+        Lets try using useRef() when button is clicked it will select 2nd box:
+        i.e creating a reference to a input element:
+      </div>
+      <input type="text" /> <br />
+      <input type="text" ref={inputRef} /> <br />
+      <button onClick={btnRefHandler}>Set Focus</button>
     </div>
   );
 }
