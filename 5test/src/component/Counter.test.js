@@ -23,5 +23,23 @@ test("On click, it should increment counter by 1", () => {
     expect(counterEl.textContent).toBe("1");
 })
 
+test("Input should have 10 as initial value", () => {
+    render(<Counter />);
+    const inputEl = screen.getByTestId("input");
+    expect(inputEl.value).toBe("10");
+})
+
+test("Entering value in input works", () => {
+    render(<Counter />);
+    const inputEl = screen.getByTestId("input");
+    fireEvent.change(inputEl, {
+        target: {
+            value: 11
+        }
+    });
+
+    expect(inputEl.value).toBe("11");
+})
+
 //using getByText() you dont need to worry the content.
 //textContent will give us value fo content
