@@ -747,3 +747,8 @@ test("Initial value of counter should be 0", () => {
     => WHen getByTestId() given, it gets us the element reference 
     just like getElementById():
   
+  ///Button click test// -fireEvent. From test generating click events. 
+  Options for generating click events from the test:
+    1) userEvent - Companion library of testing library.
+    2) fireEvent- Part of react testing library.
+90.

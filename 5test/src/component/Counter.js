@@ -4,7 +4,8 @@ const Counter = () => {
     return (
         <div>
             <h3 data-testid="cnt">{counter}</h3>
-            <button onClick={() => setCounter(counter + 1)}>Increment</button>
+            <button data-testid="btn"
+                onClick={() => setCounter(counter + 1)}>Increment</button>
         </div>
     )
 }
