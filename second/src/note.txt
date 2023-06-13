@@ -629,7 +629,23 @@ at the development time itslef you get to know possible compile time Errors.
     }
     let a = sum(2,9);
 
+73. What is the application of defining interface in TS?
+    => similar to ans 74.  
 
+74. What is the advantage of defining interface in react?
+  Interfaces in React provide type safety and maintainability!
+  By defining interfaces for component props, you ensure that the correct data structure is passed, catch errors early,
+  and enhance collaboration among developers.
+  
+75. Define a component "props" using interface. 
+  interface Props {
+    pCode: number;
+    pName: string;
+    qty: number;
+  }
+
+76. How will you make the attribute optional?
+  "?" is widely used to make the optional argument in TypeScript. 
 
 
 
